@@ -9,33 +9,86 @@
 
   <body class="body">
     <div class="page">
-      <dialog class="popup">
+      <dialog class="popup popup_edit-profile">
         <div class="popup__container">
           <button
-            class="button button_type_close"
+            class="button button__close button__close_edit-profile"
             type="button"
-            form="popupForm"
+            form="popupFormEditProfile"
           ></button>
           <h2 class="popup__title">Редактировать профиль</h2>
-          <form class="form" name="popupForm" id="popupForm">
+          <form
+            class="form form_edit-profile"
+            name="popupFormEditProfile"
+            id="popupFormEditProfile"
+          >
             <input
-              class="form__input form__input_type_name"
+              class="form__input form__input_type-name"
               type="text"
               name="name"
               value="Жак-Ив Кусто">
             <input
-              class="form__input form__input_type_job"
+              class="form__input form__input_type-job"
               type="text"
               name="job"
               value="Исследователь океана">
             <button
-              class="button button_type_submit"
+              class="button button__submit button__submit_edit-profile"
               type="submit"
-              form="popupForm"
+              form="popupFormEditProfile"
             >
               Сохранить
             </button>
           </form>
+        </div>
+      </dialog>
+
+      <dialog class="popup popup_add-photo">
+        <div class="popup__container">
+          <button
+            class="button button__close button__close_add-photo"
+            type="button"
+            form="popupFormAddPhoto"
+          ></button>
+          <h2 class="popup__title">Новое место</h2>
+          <form
+            class="form form_add-photo"
+            name="popupFormAddPhoto"
+            id="popupFormAddPhoto"
+          >
+            <input
+              class="form__input form__input_photo-title"
+              type="text"
+              name="photoTitle"
+              placeholder="Название">
+            <input
+              class="form__input form__input_photo-link"
+              type="text"
+              name="photoLink"
+              placeholder="Ссылка на картинку">
+            <button
+              class="button button__submit button__submit_add-photo"
+              type="submit"
+              form="popupFormAddPhoto"
+            >
+              Создать
+            </button>
+          </form>
+        </div>
+      </dialog>
+
+      <dialog class="popup popup_zoom">
+        <div class="popup__zoom-container">
+          <button
+            class="button button__close-zoom"
+            type="button"
+          ></button>
+          <figure class="popup__zoom-photo">
+            <img class="popup__photo" src="#" alt="#">
+            <figcaption class="popup__zoom-title">
+              <p class="popup__photo-title"></p>
+          </figcaption>
+        </figure>
         </div>
       </dialog>
 
@@ -46,127 +99,50 @@
           alt="Логотип: Mesto Russia">
       </header>
 
-      <main>
+      <main class="container">
         <section class="profile">
-          <img
-            class="profile__avatar"
-            src="images/avatar.jpg"
-            alt="Аватар">
+          <img class="profile__avatar" src="images/avatar.jpg" alt="Аватар">
           <div class="profile__info">
             <div class="profile__content">
               <h1 class="profile__title">Жак-Ив Кусто</h1>
               <button
-                class="button button_type_edit"
+                class="button button__edit"
                 name="edit"
                 type="button"
               ></button>
             </div>
             <p class="profile__subtitle">Исследователь океана</p>
           </div>
-          <button
-            class="button button_type_add"
-            name="add"
-            type="button"
-          ></button>
+          <button class="button button__add" name="add" type="button"></button>
         </section>
 
-        <section class="elements" aria-label="Записи в профиле">
-          <article class="element">
-            <img
-              class="element__cover"
-              src="images/Karachayevsk.png"
-              alt="Обложка: Карачаево-Черкессия">
-            <div class="element__caption">
-              <h2 class="element__title">Карачаево-Черкессия</h2>
-              <button
-                class="button button_type_like"
-                type="button"
-                name="like"
-              ></button>
-            </div>
-          </article>
+        <section class="elements" aria-label="Записи в профиле"></section>
 
-          <article class="element">
-            <img
-              class="element__cover"
-              src="images/elbrus.png"
-              alt="Обложка: Гора Эльбрус">
-            <div class="element__caption">
-              <h2 class="element__title">Гора Эльбрус</h2>
-              <button
-                class="button button_type_like"
-                type="button"
-                name="like"
-              ></button>
-            </div>
-          </article>
-
-          <article class="element">
-            <img
-              class="element__cover"
-              src="images/dombay.png"
-              alt="Обложка: Домбай">
-            <div class="element__caption">
-              <h2 class="element__title">Домбай</h2>
-              <button
-                class="button button_type_like"
-                type="button"
-                name="like"
-              ></button>
-            </div>
-          </article>
-
-          <article class="element">
-            <img
-              class="element__cover"
-              src="images/Baikal.jpg"
-              alt="Обложка: Байкал">
-            <div class="element__caption">
-              <h2 class="element__title">Байкал</h2>
-              <button
-                class="button button_type_like"
-                type="button"
-                name="like"
-              ></button>
-            </div>
-          </article>
-
-          <article class="element">
-            <img
-              class="element__cover"
-              src="images/Kamchatka.jpg"
-              alt="Обложка: Камчатка">
-            <div class="element__caption">
-              <h2 class="element__title">Камчатка</h2>
-              <button
-                class="button button_type_like"
-                type="button"
-                name="like"
-              ></button>
-            </div>
-          </article>
-
-          <article class="element">
-            <img
-              class="element__cover"
-              src="images/Gizhgit.jpg"
-              alt="Обложка: Гиджит">
-            <div class="element__caption">
-              <h2 class="element__title">Гиджит</h2>
-              <button
-                class="button button_type_like"
-                type="button"
-                name="like"
-              ></button>
-            </div>
-          </article>
-        </section>
       </main>
 
       <footer class="footer">
         <p class="footer__copyright">© 2020 Mesto Russia</p>
       </footer>
     </div>
+
+    <template class="card-template" id="cardTemplate">
+      <article class="element">
+        <button
+          class="button button__delete"
+          type="button"
+          name="delete"
+        ></button>
+        <img class="element__cover" src="" alt="">
+        <div class="element__caption">
+          <h2 class="element__title"></h2>
+          <button
+            class="button button__like"
+            type="button"
+            name="like"
+          ></button>
+        </div>
+      </article>
+    </template>
 
     <script src="scripts/index.js"></script>
   </body>

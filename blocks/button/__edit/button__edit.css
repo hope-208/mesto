@@ -1,4 +1,4 @@
-.button_type_edit {
+.button__edit {
   height: 24px;
   -ms-grid-row: 1;
   grid-row: 1;
@@ -16,14 +16,14 @@
 }
 
 @media screen and (max-width: 950px) {
-  .button_type_edit {
+  .button__edit {
     margin-right: 0;
     margin-top: 8px;
   }
 }
 
 @media screen and (max-width: 770px) {
-  .button_type_edit {
+  .button__edit {
     width: 18px;
     height: 18px;
     padding: 4px;
@@ -32,11 +32,11 @@
   }
 }
 
-.button_type_edit:hover {
+.button__edit:hover {
   opacity: 0.6;
   cursor: pointer;
 }
 
-.button_type_edit:focus {
+.button__edit:focus {
   opacity: 0.6;
 }

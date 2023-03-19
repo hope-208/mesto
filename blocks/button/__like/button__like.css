@@ -1,4 +1,4 @@
-.button_type_like {
+.button__like {
   height: 19px;
   max-width: 23px;
   background: transparent url(../../../images/like.svg) no-repeat center / 22px;
@@ -6,11 +6,11 @@
   z-index: 2;
 }
 
-.button_type_like:hover {
+.button__like:hover {
   opacity: 0.5;
   cursor: pointer;
 }
 
-.button_type_like:focus {
+.button__like:focus {
   opacity: 0.5;
 }

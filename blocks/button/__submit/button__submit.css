@@ -1,4 +1,4 @@
-.button_type_submit {
+.button__submit {
   max-width: 358px;
   margin-block: 0;
   margin-inline: 0;
@@ -14,17 +14,17 @@
   z-index: 6;
 }
 
-.button_type_submit:hover {
+.button__submit:hover {
   opacity: 0.8;
   cursor: pointer;
 }
 
-.button_type_submit:focus {
+.button__submit:focus {
   opacity: 0.8;
 }
 
 @media screen and (max-width: 495px) {
-  .button_type_submit {
+  .button__submit {
     max-width: 238px;
     font-size: 14px;
     height: 46px;

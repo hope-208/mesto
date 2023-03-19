@@ -1,4 +1,4 @@
-.button_type_close {
+.button__close {
   -ms-grid-row: 1;
   grid-row: 1;
   -ms-grid-column: 2;
@@ -16,7 +16,7 @@
 }
 
 @media screen and (max-width: 495px) {
-  .button_type_close {
+  .button__close {
     top: calc((100% - (322px + 16px + 20px)) / 2);
     right: calc((100% - 282px) / 2);
     width: 20px;
@@ -31,11 +31,11 @@
   }
 }
 
-.button_type_close:hover {
+.button__close:hover {
   opacity: 0.6;
   cursor: pointer;
 }
 
-.button_type_close:focus {
+.button__close:focus {
   opacity: 0.6;
 }

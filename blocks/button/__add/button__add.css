@@ -1,4 +1,4 @@
-.button_type_add {
+.button__add {
   -ms-grid-row: 1;
   grid-row: 1;
   -ms-grid-column: 3;
@@ -18,24 +18,24 @@
 }
 
 @media screen and (max-width: 950px) {
-  .button_type_add {
+  .button__add {
     max-width: 282px;
     width: 100%;
   }
 }
 
 @media screen and (max-width: 770px) {
-  .button_type_add {
+  .button__add {
     padding: 15px 62px;
     background-size: 16px;
   }
 }
 
-.button_type_add:hover {
+.button__add:hover {
   opacity: 0.6;
   cursor: pointer;
 }
 
-.button_type_add:focus {
+.button__add:focus {
   opacity: 0.6;
 }
