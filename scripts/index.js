@@ -1,4 +1,4 @@
-import { Card } from './Cards.js';
+import { Card } from './cards.js';
 
 import { FormValidator } from './FormValidator.js';
 
