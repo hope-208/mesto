@@ -1,6 +1,6 @@
 import { Card } from './Cards.js';
 
-import { FormValidator } from './validate.js';
+import { FormValidator } from './FormValidator.js';
 
 export const initialCards = [
   {
@@ -29,7 +29,7 @@ export const initialCards = [
   },
 ];
 
-const settings = {
+export const settings = {
   inputSelector: '.form__input',
   submitButtonSelector: '.button-submit',
   inactiveButtonClass: 'button-submit_disabled',
@@ -132,22 +132,14 @@ editPopup.addEventListener('click', function () {
   profileJob.value = jobProfile.textContent;
   profileFormValidation.resetErrors();
   openPopup(editProfilePopup);
-  profileFormValidation.toggleButtonState(
-    [profileName, profileJob],
-    settings.createProfile,
-    settings.inactiveButtonClass
-  );
+  profileFormValidation.toggleButtonState();
 });
 
 addPopup.addEventListener('click', function () {
   photoForm.reset();
   openPopup(addPhotoPopup);
   photoFormValidation.resetErrors();
-  photoFormValidation.toggleButtonState(
-    [photoTitle, photoLink],
-    settings.createCardButton,
-    settings.inactiveButtonClass
-  );
+  photoFormValidation.toggleButtonState();
 });
 
 profileForm.addEventListener('submit', handleFormSubmit);

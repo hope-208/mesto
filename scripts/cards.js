@@ -28,29 +28,31 @@ export class Card {
     openPopup(Card._zoomPopup);
   }
 
+  _handleLikeClick() {
+    this._likeButton.classList.toggle('button-like_active');
+  }
+
+  _handleDeleteClick() {
+    this._element.remove();
+    this._element = null;
+  }
+
   generateCard() {
     this._element = this._getTemplate();
-    this._element.querySelector('.element__cover').src = this._link;
-    this._element.querySelector('.element__cover').alt = this._name;
+    const elementCover = this._element.querySelector('.element__cover');
+    elementCover.src = this._link;
+    elementCover.alt = this._name;
     this._element.querySelector('.element__title').textContent = this._name;
+    this._likeButton = this._element.querySelector('.button-like');
+    this._deleteButton = this._element.querySelector('.button-delete');
 
-    this._element
-      .querySelector('.element__cover')
-      .addEventListener('click', () => {
-        this._popupZoomOpen();
-      });
+    elementCover.addEventListener('click', () => this._popupZoomOpen());
 
-    this._element
-      .querySelector('.button-like')
-      .addEventListener('click', (evt) => {
-        evt.target.classList.toggle('button-like_active');
-      });
+    this._likeButton.addEventListener('click', () => this._handleLikeClick());
 
-    this._element
-      .querySelector('.button-delete')
-      .addEventListener('click', (evt) => {
-        evt.target.closest('.element').remove();
-      });
+    this._deleteButton.addEventListener('click', () =>
+      this._handleDeleteClick()
+    );
 
     return this._element;
   }
