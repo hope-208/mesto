@@ -23,7 +23,7 @@
   }
 }
 
-@media screen and (max-width: 495px) {
+@media screen and (max-width: 540px) {
   .elements {
     max-width: 282px;
     width: 100%;

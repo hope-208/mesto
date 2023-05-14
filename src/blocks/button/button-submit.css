@@ -32,7 +32,7 @@
   opacity: 0.8;
 }
 
-@media screen and (max-width: 495px) {
+@media screen and (max-width: 540px) {
   .button-submit {
     max-width: 238px;
     font-size: 14px;

@@ -123,6 +123,70 @@
         </div>
       </section>
 
+      <section class="popup popup_edit-avatar">
+        <div class="popup__avatar-container">
+          <button
+            class="button-close button-close_edit-avatar"
+            type="button"
+            form="formEditAvatar"
+          ></button>
+
+          <form
+            class="form form_edit-avatar"
+            name="formEditAvatar"
+            id="formEditAvatar"
+            novalidate
+          >
+            <h2 class="popup__title">Обновить аватар</h2>
+            <label class="form__label"
+              ><input
+                class="form__input form__input_edit-avatar"
+                type="url"
+                name="avatar"
+                id="avatar"
+                placeholder="Ссылка на картинку"
+                required>
+              <span class="error avatar-error"></span
+            ></label>
+            <button
+              class="button-submit button-submit_edit-avatar button-submit_disabled"
+              type="submit"
+              form="formEditAvatar"
+              disabled
+            >
+              Сохранить
+            </button>
+          </form>
+        </div>
+      </section>
+
+      <section
+        class="popup popup_delete"
+        aria-label="Всплывающее окно подтверждения удаления карточки."
+      >
+        <div class="popup__delete-container">
+          <button
+            class="button-close button-close_delete"
+            type="button"
+          ></button>
+          <form
+            class="form form_card-delete"
+            name="formDeleteCard"
+            id="formDeleteCard"
+            novalidate
+          >
+            <h2 class="popup__title-delete">Вы уверены?</h2>
+            <button
+              class="button-submit button-submit-valid-delete"
+              type="submit"
+              form="formDeleteCard"
+            >
+              Да
+            </button>
+          </form>
+        </div>
+      </section>
+
       <header class="header">
         <img
           class="header__logo"
@@ -132,10 +196,13 @@
 
       <main class="container">
         <section class="profile">
-          <img
-            class="profile__avatar"
-            src="<%=require('./images/avatar.jpg')%>"
-            alt="Аватар">
+          <div class="avatar">
+            <img
+              class="avatar__image"
+              src="<%=require('./images/avatar.jpg')%>"
+              alt="Аватар">
+            <div class="avatar__overlay"></div>
+          </div>
           <div class="profile__info">
             <div class="profile__content">
               <h1 class="profile__title">Жак-Ив Кусто</h1>
@@ -150,7 +217,7 @@
       </main>
 
       <footer class="footer">
-        <p class="footer__copyright">© 2020 Mesto Russia</p>
+        <p class="footer__copyright">© 2023 Mesto Russia</p>
       </footer>
     </div>
 
@@ -160,7 +227,10 @@
         <img class="element__cover" src="https://" alt="#">
         <div class="element__caption">
           <h2 class="element__title"></h2>
-          <button class="button-like" type="button" name="like"></button>
+          <div>
+            <button class="button-like" type="button" name="like"></button>
+            <p class="element__like-count"></p>
+          </div>
         </div>
       </article>
     </template>

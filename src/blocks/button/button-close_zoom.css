@@ -21,7 +21,7 @@
   z-index: 11;
 }
 
-@media screen and (max-width: 495px) {
+@media screen and (max-width: 540px) {
   .button-close_zoom {
     top: -36px;
     right: 0;

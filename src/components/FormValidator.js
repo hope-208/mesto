@@ -65,8 +65,6 @@ export class FormValidator {
   _setEventListeners() {
     this.toggleButtonState();
 
-    //const thisObject = this;
-
     this._inputList.forEach((inputElement) => {
       inputElement.addEventListener('input', () => {
         this._checkInputValidity(inputElement);

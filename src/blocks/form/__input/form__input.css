@@ -24,7 +24,7 @@
   border-radius: 2px;
 }
 
-@media screen and (max-width: 495px) {
+@media screen and (max-width: 540px) {
   .form__input {
     max-width: 238px;
     font-size: 14px;

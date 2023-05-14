@@ -16,7 +16,7 @@
   line-height: 1.2;
 }
 
-@media screen and (max-width: 495px) {
+@media screen and (max-width: 540px) {
   .form {
     max-width: 282px;
     padding: 25px 22px;

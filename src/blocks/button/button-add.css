@@ -11,9 +11,6 @@
   object-fit: cover;
   grid-row: 1;
   grid-column: 3;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   width: 150px;
   height: 50px;
