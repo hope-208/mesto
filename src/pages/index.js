@@ -49,15 +49,35 @@ let cardList = {};
 const promises = [ api.getMyProfile(), api.getInitialCards() ]
 
 Promise.all(promises)
-  .then(([profile, cardList]) => {
-    profile;
-    cardList;
+  .then(([profileData, cardListData]) => {
+    profile = new UserInfo({
+      nameSelector: '.profile__title',
+      jobSelector: '.profile__subtitle',
+      avatarSelector: '.avatar__image',
+      name: profileData.name,
+      job: profileData.about,
+      avatar: profileData.avatar,
+      id: profileData._id,
+    });
+    profile.displayUserInfo();
+
+    cardList = new Section(
+      {
+        items: cardListData,
+        renderer: (item) => {
+          const cardElement = createCard(item);
+          cardList.startItem(cardElement);
+        },
+      },
+      '.elements'
+    );
+    cardList.renderItems();
   })
   .catch((err) => {
     console.log(err);
   });
 
-
+/*
 api.getMyProfile()
 .then((data) => {
   profile = new UserInfo({
@@ -73,8 +93,9 @@ api.getMyProfile()
 })
 .catch((err) => {
   console.log(err);
-});
+});*/
 
+/*
 api.getInitialCards().then((data) => {
   cardList = new Section(
     {
@@ -87,7 +108,7 @@ api.getInitialCards().then((data) => {
     '.elements'
   );
   cardList.renderItems();
-});
+});*/
 
 const avatarProfilePopup = new PopupWithForm(
   '.popup_edit-avatar',
@@ -150,7 +171,7 @@ function createCard(item) {
           api.
           deleteCard(cardId)
             .then(() => {
-              card.deleteCardClick(card._cardId);
+              card.deleteCardClick();
               deleteCardPopup.close();
             })
             .catch((err) => console.log(err))
