@@ -77,39 +77,6 @@ Promise.all(promises)
     console.log(err);
   });
 
-/*
-api.getMyProfile()
-.then((data) => {
-  profile = new UserInfo({
-    nameSelector: '.profile__title',
-    jobSelector: '.profile__subtitle',
-    avatarSelector: '.avatar__image',
-    name: data.name,
-    job: data.about,
-    avatar: data.avatar,
-    id: data._id,
-  });
-  profile.displayUserInfo();
-})
-.catch((err) => {
-  console.log(err);
-});*/
-
-/*
-api.getInitialCards().then((data) => {
-  cardList = new Section(
-    {
-      items: data,
-      renderer: (item) => {
-        const cardElement = createCard(item);
-        cardList.startItem(cardElement);
-      },
-    },
-    '.elements'
-  );
-  cardList.renderItems();
-});*/
-
 const avatarProfilePopup = new PopupWithForm(
   '.popup_edit-avatar',
   (inputValues) => {
