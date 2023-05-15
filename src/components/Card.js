@@ -28,10 +28,10 @@ export default class Card {
       .cloneNode(true);
   }
 
-  _handleDeleteClick() {
+  deleteCardClick() {
     this._element.remove();
-    this._element = null;
-  }
+this._element = null;
+    }
 
   showLike() {
     this._likes.forEach((element) => {
@@ -60,10 +60,7 @@ export default class Card {
     });
 
     this._deleteButton.addEventListener('click', () => {
-      this._handleCardDelete({
-        cardObj: this._card,
-        cardDom: this._cardElement,
-      });
+      this._handleCardDelete(this._cardId)
     });
 
     const elementCover = this._element.querySelector('.element__cover');
@@ -74,7 +71,6 @@ export default class Card {
 
   generateCard() {
     this._element = this._getTemplate();
-    this._element.id = this._cardId;
 
     const elementCover = this._element.querySelector('.element__cover');
     const elementTitle = this._element.querySelector('.element__title');
@@ -92,12 +88,10 @@ export default class Card {
       this._deleteButton.style.display = 'none';
     } else {
       this._deleteButton.addEventListener('click', () =>
-        this._handleCardDelete({
-          cardObj: this._card,
-          cardDom: this._cardElement,
-        })
-      );
-    }
+
+        this._handleCardDelete(this._cardId))
+
+    };
 
     this.showLike();
     this._eventListeners();

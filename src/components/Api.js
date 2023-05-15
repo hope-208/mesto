@@ -4,19 +4,20 @@ export default class Api {
     this._headers = headers;
   }
 
+  _checkResponse(res) {
+    if (res.ok) {
+      return res.json();
+    } else {
+      return Promise.reject(`код ошибки: ${res.status}`);
+    }}
+
+
   getInitialCards() {
     return fetch(`${this._baseUrl}/cards`, {
       headers: this._headers,
     })
       .then((res) => {
-        if (res.ok) {
-          return res.json();
-        }
-        return Promise.reject(`Ошибка: ${res.status}`);
-      })
-      .catch((err) => {
-        console.log(err);
-      });
+        return this._checkResponse(res);})
   }
 
   getMyProfile() {
@@ -24,14 +25,7 @@ export default class Api {
       headers: this._headers,
     })
       .then((res) => {
-        if (res.ok) {
-          return res.json();
-        }
-        return Promise.reject(`Ошибка: ${res.status}`);
-      })
-      .catch((err) => {
-        console.log(err);
-      });
+        return this._checkResponse(res);})
   }
 
   editMyProfile({ name, about }) {
@@ -44,14 +38,7 @@ export default class Api {
       }),
     })
       .then((res) => {
-        if (res.ok) {
-          return res.json();
-        }
-        return Promise.reject(`Ошибка: ${res.status}`);
-      })
-      .catch((err) => {
-        console.log(err);
-      });
+        return this._checkResponse(res);})
   }
 
   addPhoto({ title, link }) {
@@ -64,14 +51,7 @@ export default class Api {
       }),
     })
       .then((res) => {
-        if (res.ok) {
-          return res.json();
-        }
-        return Promise.reject(`Ошибка: ${res.status}`);
-      })
-      .catch((err) => {
-        console.log(err);
-      });
+        return this._checkResponse(res);})
   }
 
   setLike(cardId) {
@@ -80,14 +60,7 @@ export default class Api {
       headers: this._headers,
     })
       .then((res) => {
-        if (res.ok) {
-          return res.json();
-        }
-        return Promise.reject(`Ошибка: ${res.status}`);
-      })
-      .catch((err) => {
-        console.log(err);
-      });
+        return this._checkResponse(res);})
   }
 
   deleteLike(cardId) {
@@ -96,14 +69,7 @@ export default class Api {
       headers: this._headers,
     })
       .then((res) => {
-        if (res.ok) {
-          return res.json();
-        }
-        return Promise.reject(`Ошибка: ${res.status}`);
-      })
-      .catch((err) => {
-        console.log(err);
-      });
+        return this._checkResponse(res);})
   }
 
   deleteCard(cardId) {
@@ -112,14 +78,7 @@ export default class Api {
       headers: this._headers,
     })
       .then((res) => {
-        if (res.ok) {
-          return res.json();
-        }
-        return Promise.reject(`Ошибка: ${res.status}`);
-      })
-      .catch((err) => {
-        console.log(err);
-      });
+        return this._checkResponse(res);})
   }
 
   editMyAvatar(avatar) {
@@ -129,13 +88,6 @@ export default class Api {
       body: JSON.stringify({ avatar: avatar }),
     })
       .then((res) => {
-        if (res.ok) {
-          return res.json();
-        }
-        return Promise.reject(`Ошибка: ${res.status}`);
-      })
-      .catch((err) => {
-        console.log(err);
-      });
+        return this._checkResponse(res);})
   }
 }
